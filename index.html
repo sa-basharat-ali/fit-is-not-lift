@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="A one-page case for Minerva's data team: where uplift and agent guardrails fit, and the experience Syed Ahmed Basharat Ali brings to each.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Fit Is Not Lift">
+<meta property="og:description" content="A one-page case for Minerva's data team by Syed Ahmed Basharat Ali.">
+<style>body{margin:0}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
+<title>Fit Is Not Lift</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: memo column with one interactive "audience" figure in the hero; each section is a quiet band, one dark close. */
+:root{
+  --paper:#F3F6F5; --sheet:#FFFFFF; --ink:#13202A; --muted:#5A6870; --rule:#DCE3E1; --dot:#C9D3D0;
+  --teal:#0D6E68; --teal-soft:#DDEFEC; --amber:#B8760E; --amber-soft:#F7ECD7;
+  --night:#10232A; --night-ink:#E8F0EE; --night-muted:#9FB3B2;
+  --display:"Bricolage Grotesque","Avenir Next","Segoe UI",sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0E1518; --sheet:#152024; --ink:#E6ECEA; --muted:#9BAAAF; --rule:#26343A; --dot:#2E3E44;
+  --teal:#5CC0B6; --teal-soft:#15312F; --amber:#E6AC4E; --amber-soft:#382B15;
+  --night:#0A1A1F; --night-ink:#E8F0EE; --night-muted:#93A8A7; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0E1518; --sheet:#152024; --ink:#E6ECEA; --muted:#9BAAAF; --rule:#26343A; --dot:#2E3E44;
+  --teal:#5CC0B6; --teal-soft:#15312F; --amber:#E6AC4E; --amber-soft:#382B15;
+  --night:#0A1A1F; --night-ink:#E8F0EE; --night-muted:#93A8A7; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.62}
+.wrap{max-width:62rem;margin:0 auto;padding-block:3.5rem 4rem;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));
+  display:flex;flex-direction:column;gap:4.5rem}
+h1,h2,h3{font-family:var(--display);line-height:1.08;text-wrap:balance;margin:0}
+h1{font-size:clamp(3rem,8.5vw,5.6rem);font-weight:800;letter-spacing:-.035em}
+h2{font-size:clamp(1.6rem,3.6vw,2.3rem);font-weight:600;letter-spacing:-.02em}
+h3{font-size:1.2rem;font-weight:600;letter-spacing:-.01em}
+p{margin:0;max-width:64ch}
+.label{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+a{color:var(--teal);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:3px}
+section{display:flex;flex-direction:column;gap:1.4rem}
+.head{display:flex;flex-direction:column;gap:.6rem}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:2.5rem;align-items:center}
+.hero-text{display:flex;flex-direction:column;gap:1.3rem;min-width:0}
+.hero h1 .lift{color:var(--teal);position:relative;white-space:nowrap}
+.hero h1 .lift::after{content:"";position:absolute;left:0;right:.1em;bottom:.06em;height:.12em;background:var(--amber);border-radius:2px}
+.lede{font-size:1.22rem;line-height:1.5}
+.byline{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;color:var(--muted);font-size:.95rem}
+.byline b{color:var(--ink);font-weight:600}
+@media (max-width:820px){.hero{grid-template-columns:1fr}}
+
+/* audience figure */
+.aud{background:var(--sheet);border:1px solid var(--rule);border-radius:14px;padding:1.3rem;display:flex;flex-direction:column;gap:1rem;min-width:0;box-shadow:0 1px 0 var(--rule),0 18px 40px -28px rgba(10,40,40,.35)}
+.toggle{display:flex;background:var(--paper);border-radius:999px;padding:4px;gap:4px}
+.toggle button{flex:1;font:600 .82rem var(--display);border:0;border-radius:999px;padding:.5rem .6rem;background:transparent;color:var(--muted);cursor:pointer;transition:background .2s,color .2s}
+.toggle button[aria-pressed="true"]{background:var(--sheet);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.grid{display:grid;grid-template-columns:repeat(10,1fr);gap:7px}
+.grid i{aspect-ratio:1;max-width:100%;border-radius:50%;background:var(--dot);transition:background .35s,transform .35s,box-shadow .35s}
+.grid i.pick{transform:scale(1.08)}
+.grid i.pick.persuade{background:var(--teal)}
+.grid i.pick.sure{background:var(--amber)}
+.grid i.pick.none{background:var(--muted)}
+.grid i.persuade:not(.pick){background:transparent;box-shadow:inset 0 0 0 2px var(--teal);opacity:.55}
+.grid i.sure:not(.pick){background:transparent;box-shadow:inset 0 0 0 2px var(--amber);opacity:.45}
+.key span.ring::before{background:transparent;box-shadow:inset 0 0 0 2px var(--c)}
+.readout{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
+.readout .big{font-family:var(--display);font-weight:800;font-size:2.3rem;line-height:1;color:var(--teal)}
+.readout span{color:var(--muted);font-size:.95rem}
+.key{display:flex;flex-wrap:wrap;gap:.35rem 1rem;font-size:.82rem;color:var(--muted)}
+.key span{display:inline-flex;align-items:center;gap:.4rem}
+.key span::before{content:"";width:.7rem;height:.7rem;border-radius:50%;background:var(--c)}
+@media (prefers-reduced-motion:reduce){.grid i,.toggle button{transition:none}}
+
+/* stack */
+.flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;list-style:none;padding:0;margin:0;position:relative}
+.flow li{position:relative;display:flex;flex-direction:column;gap:.45rem;padding:0 1rem 0 0;min-width:0}
+.flow .node{width:2.2rem;height:2.2rem;border-radius:50%;display:grid;place-items:center;background:var(--sheet);border:1.5px solid var(--rule);font:600 .85rem var(--mono);color:var(--muted);position:relative;z-index:1}
+.flow li:not(:last-child)::after{content:"";position:absolute;top:1.1rem;left:2.2rem;right:0;height:1.5px;background:var(--rule)}
+.flow strong{font-family:var(--display);font-weight:600;font-size:1.02rem;line-height:1.25}
+.flow span.d{font-size:.9rem;color:var(--muted);line-height:1.45}
+.flow li.focus .node{background:var(--amber);border-color:var(--amber);color:var(--sheet)}
+.flow li.focus strong{color:var(--amber)}
+.flow .tag{font:600 .66rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
+@media (max-width:760px){
+  .flow{grid-template-columns:1fr;gap:1.1rem}
+  .flow li{display:grid;grid-template-columns:2.2rem minmax(0,1fr);column-gap:1rem;padding:0}
+  .flow li > :not(.node){grid-column:2}
+  .flow .node{grid-row:1/span 3}
+  .flow li:not(:last-child)::after{top:2.2rem;bottom:-1.1rem;left:1.1rem;right:auto;width:1.5px;height:auto}
+}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.stat{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:.3rem;min-width:0}
+.stat .big{font-family:var(--display);font-weight:800;font-size:2.2rem;line-height:1;letter-spacing:-.02em}
+.stat p{font-size:.92rem;color:var(--muted)}
+@media (max-width:640px){.stats{grid-template-columns:1fr}}
+.note{border-left:3px solid var(--amber);padding-left:1rem;font-size:1rem}
+
+/* cases */
+.case{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);background:var(--sheet);border:1px solid var(--rule);border-radius:14px;overflow:hidden}
+.case > div{padding:1.5rem;display:flex;flex-direction:column;gap:.7rem;min-width:0}
+.case .them{background:var(--paper);border-right:1px solid var(--rule)}
+.case .them p{color:var(--muted);font-size:.98rem}
+.case .me .metric{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
+.case .me .metric b{font-family:var(--display);font-weight:800;font-size:2rem;line-height:1;color:var(--teal);letter-spacing:-.02em}
+.case .me .metric span{font-size:.88rem;color:var(--muted)}
+@media (max-width:760px){.case{grid-template-columns:1fr}.case .them{border-right:0;border-bottom:1px solid var(--rule)}}
+
+/* chart */
+figure{margin:0;background:var(--sheet);border:1px solid var(--rule);border-radius:14px;padding:1.5rem;display:flex;flex-direction:column;gap:1.1rem}
+figcaption{font-size:.92rem;color:var(--muted);max-width:68ch}
+.bars{display:flex;flex-direction:column;gap:.8rem}
+.bar{display:grid;grid-template-columns:10rem minmax(0,1fr) 3.4rem;align-items:center;gap:.9rem;font-size:.95rem}
+.bar .track{height:1.4rem;background:var(--paper);border-radius:999px;overflow:hidden}
+.bar .fill{height:100%;background:var(--dot);border-radius:999px}
+.bar.prop .fill{background:var(--amber)}
+.bar.up .fill{background:var(--teal)}
+.bar.up{font-weight:600}
+.bar .num{text-align:right}
+@media (max-width:480px){.bar{grid-template-columns:1fr 3rem}.bar .track{grid-column:1/-1;grid-row:2}}
+
+/* plan */
+.plan{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;list-style:none;padding:0;margin:0;counter-reset:p}
+.plan li{counter-increment:p;background:var(--sheet);border:1px solid var(--rule);border-radius:14px;padding:1.4rem;display:flex;flex-direction:column;gap:.6rem;min-width:0}
+.plan li::before{content:counter(p);font:800 2.4rem/1 var(--display);color:var(--teal-soft);-webkit-text-stroke:1.5px var(--teal)}
+.plan li p{font-size:.97rem;color:var(--muted)}
+@media (max-width:760px){.plan{grid-template-columns:1fr}}
+
+/* record */
+.record{display:grid;grid-template-columns:9rem minmax(0,1fr);border-top:1px solid var(--rule)}
+.record > *{padding:.95rem 0;border-bottom:1px solid var(--rule)}
+.record dt{font:600 .74rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--teal);padding-top:1.15rem}
+.record dd{margin:0;font-size:.98rem}
+@media (max-width:520px){.record{grid-template-columns:1fr}.record dt{border-bottom:0;padding-bottom:0}}
+
+/* close */
+.close{background:var(--night);color:var(--night-ink);border-radius:18px;padding:2.4rem clamp(1.4rem,4vw,3rem);gap:1.1rem}
+.close h2{font-size:clamp(1.8rem,4.2vw,2.7rem)}
+.close p{color:var(--night-muted)}
+.contact{display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;align-items:center;font-family:var(--mono);font-size:.95rem}
+.contact #em{color:var(--night-ink)}
+.copy{font:600 .82rem var(--display);background:var(--teal);color:var(--night);border:0;border-radius:999px;padding:.55rem 1.1rem;cursor:pointer}
+.close a{color:var(--night-ink)}
+.foot{font-size:.85rem;color:var(--muted);max-width:72ch}
+</style>
+</head>
+<body>
+
+<main class="wrap">
+
+  <header class="hero">
+    <div class="hero-text">
+      <span class="label">For the Minerva data team · Data Scientist, NYC</span>
+      <h1>Fit is not <span class="lift">lift.</span></h1>
+      <p class="lede">Minerva can already find people who look like a brand's best customers. The next model tells the agent which of them will buy <i>because</i> they got the mailer, the ad or the offer. I spent years answering that question for merchants in payments, and I'd like to answer it on Minerva's graph.</p>
+      <div class="byline"><b>Syed Ahmed Basharat Ali</b><span>Data scientist, New York</span><span>28 October 2026</span></div>
+    </div>
+
+    <div class="aud" aria-label="Illustration: 100 households, 20 contacted">
+      <span class="label">100 households · budget for 20 mailers</span>
+      <div class="toggle" role="group" aria-label="Ranking method">
+        <button type="button" id="t-prop" aria-pressed="true">Rank by propensity</button>
+        <button type="button" id="t-up" aria-pressed="false">Rank by uplift</button>
+      </div>
+      <div class="grid" id="grid"></div>
+      <div class="readout"><span class="big num" id="caused">10</span><span id="readtext">of 20 mailers changed the outcome. The rest went to people who would have bought anyway.</span></div>
+      <div class="key">
+        <span style="--c:var(--teal)">Bought because we reached them</span>
+        <span style="--c:var(--amber)">Would have bought anyway</span>
+        <span class="ring" style="--c:var(--teal)">Persuadable, not mailed</span>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="head">
+      <span class="label">What I read before writing this</span>
+      <h2>How I understand Minerva's stack</h2>
+      <p>From the platform pages, the changelog, the case studies, the AdExchanger interview and the open roles, this is the path a brand's data takes today.</p>
+    </div>
+    <ol class="flow">
+      <li><span class="node">1</span><strong>Agentic Data Engineer</strong><span class="d">Maps CRM, warehouse and ad data, then writes the SQL to standardize it.</span></li>
+      <li><span class="node">2</span><strong>Identity and context</strong><span class="d">Joins to 267M profiles and 1,000+ attributes, work and personal IDs linked.</span></li>
+      <li class="focus"><span class="node">3</span><span class="tag">Where I'd work</span><strong>Scores and attributes</strong><span class="d">Propensity, personas, income and wealth, home buyer and seller.</span></li>
+      <li><span class="node">4</span><strong>Campaign agent</strong><span class="d">Audience, creative and channel, pushed to Meta, Google, Klaviyo and Lob.</span></li>
+      <li><span class="node">5</span><strong>Measurement agent</strong><span class="d">Daily ROAS, CPA and pacing in auditable reports.</span></li>
+    </ol>
+    <div class="stats">
+      <div class="stat"><span class="label">Honey Homes</span><span class="big num">2.5x</span><p>qualified leads per mailer, top 1% of households mailed</p></div>
+      <div class="stat"><span class="label">Wander</span><span class="big num">3.4x</span><p>ROAS after scoring customers on 140+ attributes</p></div>
+      <div class="stat"><span class="label">Ramp</span><span class="big num">+80%</span><p>MQL rate from the work-to-personal identity link</p></div>
+    </div>
+    <p class="note">Step 3 is the part every agent reads. With the MCP connection shipped on 6 October, Claude or ChatGPT can query and activate directly, so anything wrong in a score turns into spend with nobody checking in between.</p>
+  </section>
+
+  <section>
+    <div class="head">
+      <span class="label">Three places I'd add value</span>
+      <h2>Where my background meets your roadmap</h2>
+    </div>
+
+    <div class="case">
+      <div class="them">
+        <span class="label">On your side</span>
+        <h3>Propensity ranks fit</h3>
+        <p>The 9 September scoring ranks prospects on customer fit. The public case studies compare a Minerva audience with other lists or broad targeting. The Forward Deployed Marketer posting already asks for audiences that "report lift against a holdout".</p>
+      </div>
+      <div class="me">
+        <span class="label">What I've done</span>
+        <h3>Right offer, right cohort, proven with a test</h3>
+        <div class="metric"><b class="num">35% → 10%</b><span>merchant churn, $5M+ portfolio</span></div>
+        <p>At Geidea, a payments processor running 15M+ transactions a day, I built segmentation for 40K+ merchants by category, interchange and chargeback behaviour, modelled churn, and A/B-tested which retention offer went to which at-risk tier.</p>
+      </div>
+    </div>
+
+    <figure>
+      <span class="label">From my public model, who-should-a-rep-call</span>
+      <div class="bars" role="img" aria-label="Share of outreach that caused the conversion: old rule 30 percent, propensity 49 percent, uplift 79 percent, perfect knowledge 80 percent">
+        <div class="bar"><span>Old routing rule</span><div class="track"><div class="fill" style="width:30%"></div></div><span class="num">30%</span></div>
+        <div class="bar prop"><span>Propensity ranking</span><div class="track"><div class="fill" style="width:49%"></div></div><span class="num">49%</span></div>
+        <div class="bar up"><span>Uplift ranking</span><div class="track"><div class="fill" style="width:79%"></div></div><span class="num">79%</span></div>
+        <div class="bar"><span>Perfect knowledge</span><div class="track"><div class="fill" style="width:80%"></div></div><span class="num">80%</span></div>
+      </div>
+      <figcaption>Share of outreach that actually caused the sale, on 20,000 synthetic leads with a budget of 5,000 calls. Propensity spends half its budget on people who would have bought anyway. What I got wrong first: drawing the holdout only from skipped leads made the wrong model look good. A holdout from the whole book fixed it. <a href="https://sa-basharat-ali.github.io/who-should-a-rep-call/">See the model</a></figcaption>
+    </figure>
+
+    <div class="case">
+      <div class="them">
+        <span class="label">On your side</span>
+        <h3>Outputs an agent can trust</h3>
+        <p>The Data Scientist posting asks for "validations and guardrails that let our agents act on your work without a human in the loop".</p>
+      </div>
+      <div class="me">
+        <span class="label">What I've done</span>
+        <h3>I measure how agents go wrong</h3>
+        <div class="metric"><b class="num">38% → 98%</b><span>Claude SQL agent accuracy as its context improved</span></div>
+        <p>The useful finding was the failure shape: 29 of its 70 wrong answers were a confident 0 or null with no error. An income band read the same way would look fine and be wrong. I've also built an OpenAI function-calling assistant over live order databases for a grocery delivery startup.</p>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="them">
+        <span class="label">On your side</span>
+        <h3>Every brand's data is shaped by its history</h3>
+        <p>The role is 70% data science and 30% data engineering, on Dagster, dbt, Spark and Iceberg, with many brands' first-party data kept apart.</p>
+      </div>
+      <div class="me">
+        <span class="label">What I've done</span>
+        <h3>Multi-tenant, messy, in production</h3>
+        <div class="metric"><b class="num">50+</b><span>client schemas in one dbt migration</span></div>
+        <p>I shipped an 11-model dbt migration on Snowflake with reconciliation checks that caught two real sync issues on their first run. For a retail AI startup I traced an 80% upstream data loss across 150+ edge devices. At Geidea I found approval gaps came from wrong merchant category codes. Spending data mislabels people in ways a model will learn.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <span class="label">If I joined</span>
+      <h2>What I'd build first</h2>
+    </div>
+    <ol class="plan">
+      <li><h3>A holdout on every activation</h3><p>A small random holdout cut at activation time, so every audience reports incremental conversions, not only response rate against another list.</p></li>
+      <li><h3>Uplift next to propensity</h3><p>Score who changes behaviour when reached, starting with direct mail, where cost per piece makes wasted reach easy to price.</p></li>
+      <li><h3>Checks before an agent reads a score</h3><p>Coverage, calibration by segment and drift tests on income, wealth and propensity, so an agent gets "unknown" instead of a confident wrong value.</p></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="head">
+      <span class="label">Record</span>
+      <h2>Background</h2>
+    </div>
+    <dl class="record">
+      <dt>Consulting</dt><dd>Lead Data Scientist, own practice. Data lead for a retail edge-AI startup; dbt and data quality for a multi-tenant warehouse; AI assistant for a grocery delivery startup.</dd>
+      <dt>Geidea</dt><dd>Payments processor, 15M+ transactions a day, 400K+ POS terminals. Merchant segmentation, churn and retention testing, LTV/CAC cohorts, fraud and risk scoring, settlement data models.</dd>
+      <dt>Tools</dt><dd>Python, SQL, dbt, Airflow, Snowflake, PostgreSQL, Tableau, OpenAI and Anthropic APIs, Claude Code.</dd>
+    </dl>
+  </section>
+
+  <section class="close">
+    <span class="label" style="color:var(--night-muted)">Next step</span>
+    <h2>I'm applying for the Data Scientist role</h2>
+    <p>I'm in New York and can be in the office. If any of this is useful to your team, a reply either way helps.</p>
+    <div class="contact">
+      <span id="em">sabasharat.ali@gmail.com</span>
+      <button class="copy" id="copybtn" type="button">Copy email</button>
+      <a href="https://basharat.net">basharat.net</a>
+    </div>
+  </section>
+
+  <p class="foot">Minerva figures come from minerva.io (platform, changelog, customer stories, pricing), the October 2026 AdExchanger interview with Jackson Engles, and Minerva's open job postings. The household grid is an illustration with proportions close to my model's results; model results use synthetic data.</p>
+</main>
+
+<script>
+(function(){
+  // 100 households: 20 persuadable, 20 sure things, 60 neither; fixed shuffle so the grid is stable.
+  var types = [], i;
+  for (i=0;i<100;i++) types.push(i<20?'persuade':i<40?'sure':'none');
+  var seed = 7; function rnd(){ seed = (seed*9301+49297)%233280; return seed/233280; }
+  for (i=types.length-1;i>0;i--){ var j=Math.floor(rnd()*(i+1)); var t=types[i]; types[i]=types[j]; types[j]=t; }
+  var grid = document.getElementById('grid'), dots = [];
+  types.forEach(function(t){ var d=document.createElement('i'); d.className=t; grid.appendChild(d); dots.push(d); });
+  function idx(type){ var r=[]; types.forEach(function(t,k){ if(t===type) r.push(k); }); return r; }
+  var P = idx('persuade'), S = idx('sure');
+  var picks = { prop: P.slice(0,10).concat(S.slice(0,10)), up: P.slice(0,16).concat(S.slice(0,4)) };
+  var copy = {
+    prop: 'of 20 mailers changed the outcome. The rest went to people who would have bought anyway.',
+    up: 'of 20 mailers changed the outcome. Same budget, aimed at the people the mailer moves.'
+  };
+  function show(m){
+    var set = {}; picks[m].forEach(function(k){ set[k]=1; });
+    dots.forEach(function(d,k){ d.classList.toggle('pick', !!set[k]); });
+    document.getElementById('caused').textContent = m==='prop' ? '10' : '16';
+    document.getElementById('readtext').textContent = copy[m];
+    document.getElementById('t-prop').setAttribute('aria-pressed', m==='prop');
+    document.getElementById('t-up').setAttribute('aria-pressed', m==='up');
+  }
+  document.getElementById('t-prop').addEventListener('click', function(){ show('prop'); });
+  document.getElementById('t-up').addEventListener('click', function(){ show('up'); });
+  show('prop');
+})();
+document.getElementById('copybtn').addEventListener('click', function(){
+  var t = document.getElementById('em').textContent, b = this;
+  function sel(){ var r = document.createRange(); r.selectNodeContents(document.getElementById('em')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(t).then(function(){ b.textContent = 'Copied'; }, sel);
+  } else { sel(); }
+});
+</script>
+</body>
+</html>
